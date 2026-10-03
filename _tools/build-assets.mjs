@@ -10,8 +10,8 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const src = (f) => path.join(root, "_sources", f);
 const out = (f) => path.join(root, f);
 
-// Studio door, Skala, Patmos (from the original Google Maps pin 37°19'21.6"N 26°32'37.2"E)
-export const STUDIO = { lat: 37.322667, lon: 26.543667 };
+// Studio door, Skala, Patmos (from the Google Maps listing for Areti Chatzi Holistic Treatments)
+export const STUDIO = { lat: 37.322609, lon: 26.543715 };
 
 const BLUE = "#24607a";
 

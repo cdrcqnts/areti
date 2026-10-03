@@ -38,9 +38,11 @@ async function variants(input, name, widths, { aspect, position = "attention" } 
 async function images() {
   await variants(src("studio-facade.png"), "studio", [480, 760, 976]);
   await variants(src("areti.jpg"), "areti", [320, 560], { aspect: 1 });
-  for (const n of ["reflexology", "head-massage", "facial", "meditation"]) {
+  for (const n of ["reflexology", "face-massage", "sound-massage", "meditation"]) {
     await variants(src(`${n}.jpg`), n, [360, 640], { aspect: 4 / 5 });
   }
+  // "attention" crops this one to the face; centre keeps the hands on the shoulders
+  await variants(src("massage.jpg"), "massage", [360, 640], { aspect: 4 / 5, position: "centre" });
   // Link preview (Open Graph): 1200x630, cropped on the doorway
   await sharp(src("studio-facade.png"))
     .resize(1200, 630, { fit: "cover", position: "south" })
